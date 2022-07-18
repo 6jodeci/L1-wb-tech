@@ -28,3 +28,4 @@ func mathPow(number float64) {
 	// Уменьшение WaitGroup счетчика
 	wg.Done()
 }
+

@@ -22,3 +22,4 @@ func main() {
 func mathPow(number float64, ch chan float64) {
 	ch <- math.Pow(number, 2)
 }
+
