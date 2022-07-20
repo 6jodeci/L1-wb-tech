@@ -7,11 +7,10 @@ import "fmt"
 
 func main() {
 	var t interface{}
-	// enter your type of variable
-	t = 1.1
+	t = 1.1 // enter the value of the variable
+
 
 	switch t := t.(type) {
-
 	default:
 		fmt.Printf("type=string || value=%s\n", t) 
 	case bool:

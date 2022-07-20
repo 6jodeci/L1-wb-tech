@@ -9,7 +9,9 @@ import (
 )
 
 func main() {
-	t := make(chan(int))
+	t := make(chan(int)) // enter the value of the variable
+
+
 	i := reflect.ValueOf(t)
 	switch i.Kind() {
 	case reflect.String:
