@@ -27,3 +27,4 @@ func intersection(first, second []string) []string {
 
 	return out
 }
+
