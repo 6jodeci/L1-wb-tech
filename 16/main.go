@@ -14,7 +14,7 @@ func main() {
 	fmt.Println("Unsorted slice:\n", randomArray)
 
 	quicksort(randomArray)
-	
+
 	// вывод слайса после сортировки
 	fmt.Println("\nSorted slice:\n", randomArray)
 }
@@ -52,7 +52,7 @@ func quicksort(s []int) []int {
 		}
 	}
 	s[left], s[right] = s[right], s[left]
-	// рекурсивный вызов функции
+	// рекурсивный вызов функции для левых и правых элементов
 	quicksort((s[:left]))
 	quicksort(s[left+1:])
 	// возвращаем отсортированный слайс
