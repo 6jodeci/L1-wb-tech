@@ -12,7 +12,9 @@ func main() {
 	randomArray := createRadnomArray(10)
 	// вывод слайса до сортировки
 	fmt.Println("Unsorted slice:\n", randomArray)
+
 	quicksort(randomArray)
+	
 	// вывод слайса после сортировки
 	fmt.Println("\nSorted slice:\n", randomArray)
 }
