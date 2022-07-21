@@ -13,7 +13,7 @@ func CreateHugeString(n int) string {
 	// объявлена переменная с набором рун для использования в строке
 	var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
-	// позваляет сгенерировать рандомное значение
+	// позволяет сгенерировать рандомное значение
 	rand.Seed(time.Now().UnixNano())
 	// создание руны для хранения символов
 	b := make([]rune, n)
