@@ -19,7 +19,7 @@ func main() {
 	}
 }
 
-func binarySearch(slice []int, n int) (res,count int) {
+func binarySearch(slice []int, n int) (res, count int) {
 	// ищем центральный элемент слайса
 	mid := len(slice) / 2
 	switch {
