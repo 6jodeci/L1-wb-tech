@@ -20,5 +20,5 @@ func main() {
 	// уменьшить слайс
 	slice = slice[:len(slice)-1]
 
-	fmt.Println("Слайс после удаления i-того элемента: ", slice)
+	fmt.Println("Слайс после удаления i-го элемента: ", slice)
 }
