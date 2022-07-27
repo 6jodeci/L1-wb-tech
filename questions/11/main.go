@@ -5,29 +5,16 @@ import (
 	"sync"
 )
 
-// default - начнет перебор значений в цикле и их вывод после чего улетит в deadlock не выйдя из цикла
 func main() {
-	wg := sync.WaitGroup{}
+	wg := sync.WaitGroup{} // создаем waitGroup - механизм ожидания завершения группы задач
 	for i := 0; i < 5; i++ {
-		wg.Add(1)
-		go func(wg sync.WaitGroup, i int) {
+		wg.Add(1)                           // в цикле добавляем 5 задач
+		go func(wg sync.WaitGroup, i int) { // создаем горутины и новый waitgroup (непотянтно зачем)
+			// можно решить удалением создания новой waitgroup значения также будут рандомные (но выведутся все и мы выйдем из цикла)
 			fmt.Println(i)
-			wg.Done()
+			wg.Done() // уменьшение счетчика и разблокировка горутин
 		}(wg, i)
 	}
-	wg.Wait()
+	wg.Wait() // переход в состояние ожидания прийдем далее после выполенения всех задач
 	fmt.Println("exit")
 }
-
-// func main() {
-// 	wg := sync.WaitGroup{}
-// 	wg.Add(1)
-// 	go func() {
-// 		defer wg.Done()
-// 		for i := 0; i < 5; i++ {
-// 			fmt.Println(i)
-// 		}
-// 	}()
-// 	wg.Wait()
-// 	fmt.Println("exit")
-// }
